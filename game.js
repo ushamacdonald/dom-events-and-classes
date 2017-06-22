@@ -13,6 +13,9 @@ function bindEventListeners (dots) {
     // The first one is provided for you
     dots[i].addEventListener('contextmenu', makeGreen)
     dots[i].addEventListener('click', makeBlue)
+    dots[i].addEventListener('dblclick', hide)
+
+
   }
 }
 
@@ -30,6 +33,12 @@ function makeBlue (evt) {
 }
 
 // CREATE FUNCTION hide HERE
+
+function hide (evt) {
+  evt.target.classList.toggle('invisible')
+  updateCounts()
+}
+
 
 function updateCounts () {
   var totals = {
